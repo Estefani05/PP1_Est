@@ -1,11 +1,54 @@
 #include <stdio.h>
+#include "manejoJson.h"
 
-void importarDatos() {
+listaJson* importarDatos() {
+    char base_filename[256];
+    
+    // Pedir al usuario el nombre del archivo (sin la extensión)
+    printf("Introduce el nombre del archivo: ");
+    scanf("%255s", base_filename); // Leer el nombre del archivo, limitar a 255 caracteres para evitar desbordamientos
+
+    listaJson* l = read_json_from_file(base_filename);
+    printLista(l);
     printf("Función de importación de datos ejecutada.\n");
+    return l;
 }
 
-void procesarDatos() {
-    printf("Función de procesamiento de datos ejecutada.\n");
+listaJson* procesarDatos(listaJson* l) {
+    int opcion;
+    do {
+        
+        printf("\n--- Sub menu procesar datos ---\n");
+        printf("1. Completar datos faltantes\n");
+        printf("2. Eliminar datos duplicados\n");
+        printf("3. Volver\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch(opcion) {
+            case 1:{
+                printLista(l);
+                printf("\nelija el id de venta:\n");
+                int id;
+                scanf("%d", &id);
+                completarDatos(id, l);
+                break;
+            }case 2:{
+                printLista(l);
+                printf("\nelija el id de venta:\n");
+                int id;
+                scanf("%d", &id);
+                l = borrarDuplicados(id, l);
+                printLista(l);
+                break;
+            }case 3:
+                return l;
+         
+            default:
+                printf("Opción no válida.\n");
+        }
+    } while(opcion != 3);
+
 }
 
 void analizarDatos() {
@@ -22,7 +65,8 @@ void mostrarEstadisticas() {
 
 int main() {
     int opcion;
-
+    listaJson* lista;
+    
     do {
         printf("\n--- Menú ---\n");
         printf("1. Importación de datos\n");
@@ -36,10 +80,14 @@ int main() {
 
         switch(opcion) {
             case 1:
-                importarDatos();
+                lista = importarDatos();
                 break;
             case 2:
-                procesarDatos();
+                if(lista == NULL){
+                    printf("No hay datos para procesar\n\n");
+                    break;
+                }
+                lista = procesarDatos(lista);
                 break;
             case 3:
                 analizarDatos();
@@ -51,6 +99,7 @@ int main() {
                 mostrarEstadisticas();
                 break;
             case 6:
+                export_list_to_json_file(lista);
                 printf("Saliendo del programa...\n");
                 break;
             default:
