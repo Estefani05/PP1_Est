@@ -1,0 +1,42 @@
+[
+    {
+        "id": 3,
+        "fecha": "2024-08-29",
+        "proID": 300,
+        "name": "microondas",
+        "categoria": "electrodomestico",
+        "cantidad": 250,
+        "precio": 220,
+        "total": 50000
+    },
+    {
+        "id": 4,
+        "fecha": "2024-08-29",
+        "proID": 300,
+        "name": "microondas",
+        "categoria": "electrodomestico",
+        "cantidad": 2,
+        "precio": 260,
+        "total": 50000
+    },
+    {
+        "id": 5,
+        "fecha": "2024-08-29",
+        "proID": 300,
+        "name": "microondas",
+        "categoria": "electrodomestico",
+        "cantidad": 2,
+        "precio": 260,
+        "total": 50000
+    },
+    {
+        "id": 6,
+        "fecha": "2024-08-29",
+        "proID": 300,
+        "name": "otro",
+        "categoria": "electrodomestico",
+        "cantidad": 2,
+        "precio": 260,
+        "total": 50000
+    }
+]
