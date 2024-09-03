@@ -45,7 +45,7 @@ char* getNombre(int id, listaJson* l){
     return NULL;
 }
 
-
+//entrada: id de venta y datos del Json en forma de lista, retorna cantidad de ventas realizadas por articulo y el precio unitario
 void completarDatos (int id_obj, listaJson* l){
     if(buscar(id_obj, l)==0){return;}
     listaJson *temp = l;
@@ -65,6 +65,7 @@ void completarDatos (int id_obj, listaJson* l){
     printf("cantidad: %d - precio: %d\n", cantidad, precios);
 }
 
+//eliminar los datos dublicados con el id identificar 
 listaJson* borrarDuplicados(int id_excepcion, listaJson * cabeza) {
     listaJson * current = cabeza;
     listaJson * prev = NULL;
@@ -98,7 +99,7 @@ listaJson* borrarDuplicados(int id_excepcion, listaJson * cabeza) {
 }
 
 
-
+//devuelve los datos del json en una lista
 void printLista(listaJson* l){
     if(l->venta_id==0){return;}
     listaJson *temp = l;
