@@ -274,7 +274,7 @@ void analizarDatos(listaJson* l) {
                 break;
             }
             case 3:{
-                break;
+                return 1;
             }
             default:{
                 break;
