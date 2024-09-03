@@ -14,6 +14,10 @@ listaJson* importarDatos() {
     return l;
 }
 
+
+
+//Entrada: Datos del Json cargados en una lista Salida: moda, media y elimina los datos duplicados por medio del identificador id
+
 listaJson* procesarDatos(listaJson* l) {
     int opcion;
     do {
@@ -51,6 +55,7 @@ listaJson* procesarDatos(listaJson* l) {
 
 }
 
+//entrada: datos del json cargados en una lista, salida: suma total de ventas realizadas
 int totalVentas(listaJson* l){
     if(l->venta_id==0){return 0;}
     listaJson *temp = l;
@@ -126,6 +131,7 @@ void agregarTotalAnio(listaAnio** lista, int anio, int mes, int total) {
     }
 }
 
+//retorna el total de las ventas mensuales y anuales recibiendo listaJson 
 void imprimirTotales(listaJson* lista) {
     listaAnio* listaAgrupada = NULL;
     listaJson* temp = lista;
@@ -221,6 +227,7 @@ void ordenarCategoriasPorTotal(listaCategoria** lista) {
     *lista = sorted;
 }
 
+//como entrada recibe los datos del Json en una lista y retorna el top de 5 categorias por el total de ventas mayor a menor
 void imprimirTop5Categorias(listaJson* lista) {
     listaCategoria* listaCategorias = NULL;
     listaJson* temp = lista;
