@@ -97,6 +97,8 @@ listaJson* borrarDuplicados(int id_excepcion, listaJson * cabeza) {
     return cabeza;
 }
 
+
+
 void printLista(listaJson* l){
     if(l->venta_id==0){return;}
     listaJson *temp = l;
