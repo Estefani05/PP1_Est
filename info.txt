@@ -1,0 +1,8 @@
+a. Nombre del curso: Lenguajes de Programación
+b. II Semestre 2021
+c. Estudiante Estefani Valverde
+d. Carne 2021554564
+e. Número de proyecto programado: Proyecto 1
+f. Fecha de entrega Martes 3 setiembre
+g. Estatus de la entrega 
+MuyBuena
