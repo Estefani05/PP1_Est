@@ -284,6 +284,7 @@ listaJson* read_json_from_file(const char *filename) {
                 n->total = json_object_get_int(total_obj);
                 
             }
+            n->siguiente=NULL;
             l=insertarAlFinal(l,n);
             
         }
